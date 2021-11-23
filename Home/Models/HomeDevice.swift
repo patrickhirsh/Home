@@ -8,9 +8,9 @@
 import Foundation
 
 struct HomeDevice: Identifiable {
-    private(set) var id: String
-    private(set) var Name: String
-    private(set) var IP: String
+    public private(set) var id: String
+    public private(set) var Name: String
+    public private(set) var IP: String
     
     init(Name name: String, IP ip: String) {
         Name = name
@@ -20,7 +20,7 @@ struct HomeDevice: Identifiable {
     
     func SetMode(_ mode: String) {
         // URLSession: https://stackoverflow.com/questions/24016142/how-do-i-make-an-http-request-in-swift
-        let url = URL(string: IP + "/SetMode?Mode=" + mode)
+        let url = URL(string: "http://" + IP + "/SetMode?Mode=" + mode)
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             guard let data = data else { return }
             print(String(data: data, encoding: .utf8)!)
@@ -28,13 +28,9 @@ struct HomeDevice: Identifiable {
         task.resume()
     }
     
-    func SetColor1(Hue h: Int, Saturation s: Int, Value v: Int) { SetColor(1, h, s, v)}
-    func SetColor2(Hue h: Int, Saturation s: Int, Value v: Int) { SetColor(2, h, s, v)}
-    func SetColor3(Hue h: Int, Saturation s: Int, Value v: Int) { SetColor(3, h, s, v)}
-    
-    private func SetColor(_ c: Int, _ h: Int, _ s: Int, _ v: Int) {
+    func SetColor(ColorIndex c: Int, Hue h: u_short, Saturation s: u_char, Value v: u_char, White w: u_char) {
         // URLSession: https://stackoverflow.com/questions/24016142/how-do-i-make-an-http-request-in-swift
-        let url = URL(string: IP + "/SetColor" + String(c) + "?h=" + String(h) + "&s=" + String(s) + "&v=" + String(v))
+        let url = URL(string: "http://" + IP + "/SetColor?" + "Color=" + String(c) + "&H=" + String(h) + "&S=" + String(s) + "&V=" + String(v) + "&W=" + String(w))
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             guard let data = data else { return }
             print(String(data: data, encoding: .utf8)!)

@@ -24,9 +24,9 @@ struct DeviceList: View {
     @ObservedObject var HomeVM: HomeViewModel
     var body: some View {
         List {
-            ForEach(HomeVM.devices) { device in
-                NavigationLink(destination: DeviceSettings(HomeVM: HomeVM)) {
-                    DeviceEntry(IP: device.IP, Name: device.Name)
+            ForEach(Array(HomeVM.devices.keys), id: \.self) { device in
+                NavigationLink(destination: DeviceSettings(HomeVM: HomeVM, IP: HomeVM.devices[device]!.IP)) {
+                    DeviceEntry(IP: HomeVM.devices[device]!.IP, Name: HomeVM.devices[device]!.Name)
                 }
             }
         }
