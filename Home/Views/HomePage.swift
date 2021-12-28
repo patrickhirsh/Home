@@ -25,7 +25,7 @@ struct DeviceList: View {
     var body: some View {
         List {
             ForEach(Array(HomeVM.devices.keys), id: \.self) { device in
-                NavigationLink(destination: DeviceSettings(HomeVM: HomeVM, IP: HomeVM.devices[device]!.IP)) {
+                NavigationLink(destination: DevicePage(HomeVM: HomeVM, IP: HomeVM.devices[device]!.IP)) {
                     DeviceEntry(IP: HomeVM.devices[device]!.IP, Name: HomeVM.devices[device]!.Name)
                 }
             }

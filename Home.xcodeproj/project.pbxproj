@@ -13,9 +13,9 @@
 		CD4B74662676DF410003DA85 /* HomeDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B74652676DF410003DA85 /* HomeDevice.swift */; };
 		CD4B746A2676E0510003DA85 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B74692676E0510003DA85 /* HomeViewModel.swift */; };
 		CD4B746C2676E1000003DA85 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B746B2676E1000003DA85 /* HomePage.swift */; };
-		CD4B746E2676E1930003DA85 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B746D2676E1930003DA85 /* DeviceSettings.swift */; };
+		CD4B746E2676E1930003DA85 /* DevicePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B746D2676E1930003DA85 /* DevicePage.swift */; };
 		CD4B74702676E19F0003DA85 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B746F2676E19F0003DA85 /* Previews.swift */; };
-		CD4B7472267740FE0003DA85 /* DeviceExplorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B7471267740FE0003DA85 /* DeviceExplorer.swift */; };
+		CD875497277A9B3400525E8C /* OptionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD875496277A9B3400525E8C /* OptionViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		CD4B74652676DF410003DA85 /* HomeDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDevice.swift; sourceTree = "<group>"; };
 		CD4B74692676E0510003DA85 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CD4B746B2676E1000003DA85 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
-		CD4B746D2676E1930003DA85 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
+		CD4B746D2676E1930003DA85 /* DevicePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePage.swift; sourceTree = "<group>"; };
 		CD4B746F2676E19F0003DA85 /* Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previews.swift; sourceTree = "<group>"; };
-		CD4B7471267740FE0003DA85 /* DeviceExplorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceExplorer.swift; sourceTree = "<group>"; };
+		CD875496277A9B3400525E8C /* OptionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				CD4B746B2676E1000003DA85 /* HomePage.swift */,
-				CD4B746D2676E1930003DA85 /* DeviceSettings.swift */,
+				CD4B746D2676E1930003DA85 /* DevicePage.swift */,
+				CD875496277A9B3400525E8C /* OptionViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				CD4B74652676DF410003DA85 /* HomeDevice.swift */,
-				CD4B7471267740FE0003DA85 /* DeviceExplorer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,10 +172,10 @@
 				CD4B746C2676E1000003DA85 /* HomePage.swift in Sources */,
 				CD4B74662676DF410003DA85 /* HomeDevice.swift in Sources */,
 				CD4B74572676DCE30003DA85 /* HomeApp.swift in Sources */,
-				CD4B746E2676E1930003DA85 /* DeviceSettings.swift in Sources */,
+				CD4B746E2676E1930003DA85 /* DevicePage.swift in Sources */,
+				CD875497277A9B3400525E8C /* OptionViews.swift in Sources */,
 				CD4B746A2676E0510003DA85 /* HomeViewModel.swift in Sources */,
 				CD4B74702676E19F0003DA85 /* Previews.swift in Sources */,
-				CD4B7472267740FE0003DA85 /* DeviceExplorer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
