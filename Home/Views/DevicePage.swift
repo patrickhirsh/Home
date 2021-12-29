@@ -23,23 +23,23 @@ struct DevicePage: View {
             
             // Active
             Toggle("Active", isOn: $Active)
-                .onChange(of: Active) { _ in HomeVM.SetActive(IP: IP, Active: Active) }
+                .onChange(of: Active) { _ in HomeVM.SetDeviceActive(IP: IP, Active: Active) }
             
             // Mode
             Picker("Mode", selection: $Mode) { ForEach(Modes, id: \.self) { mode in Text(mode) } }
-                .onChange(of: Mode) { _ in HomeVM.SetMode(IP: IP, Mode: Mode) }
+                .onChange(of: Mode) { _ in HomeVM.SetDeviceMode(IP: IP, Mode: Mode) }
             
             // Color 1
             ColorPicker("Color 1", selection: $Color1, supportsOpacity: true)
-                .onChange(of: Color1) { _ in HomeVM.SetColor(IP: IP, ColorIndex: 1, Color: Color1) }
+                .onChange(of: Color1) { _ in HomeVM.SetDeviceColor(IP: IP, ColorIndex: 1, Color: Color1) }
             
             // Color 2
             ColorPicker("Color 2", selection: $Color2, supportsOpacity: true)
-                .onChange(of: Color2) { _ in HomeVM.SetColor(IP: IP, ColorIndex: 2, Color: Color2) }
+                .onChange(of: Color2) { _ in HomeVM.SetDeviceColor(IP: IP, ColorIndex: 2, Color: Color2) }
             
             // Color 3
             ColorPicker("Color 3", selection: $Color3, supportsOpacity: true)
-                .onChange(of: Color3) { _ in HomeVM.SetColor(IP: IP, ColorIndex: 3, Color: Color3) }
+                .onChange(of: Color3) { _ in HomeVM.SetDeviceColor(IP: IP, ColorIndex: 3, Color: Color3) }
             
             // Brightness
             HStack {
@@ -52,7 +52,7 @@ struct DevicePage: View {
                     maximumValueLabel: Image(systemName: "sun.max"),
                     label: { Text("Brightness") }
                 )
-                    .onChange(of: Brightness) { _ in HomeVM.SetBrightness(IP: IP, Brightness: Brightness) }
+                    .onChange(of: Brightness) { _ in HomeVM.SetDeviceBrightness(IP: IP, Brightness: Brightness) }
             }
         }
     }

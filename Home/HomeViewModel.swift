@@ -39,7 +39,12 @@ class HomeViewModel: ObservableObject {
     }
     
     
-    func SetColor(IP ip: String, ColorIndex colorIndex: Int, Color color: Color) {
+    /* Getters */
+    
+    
+    /* Setters */
+    
+    func SetDeviceColor(IP ip: String, ColorIndex colorIndex: Int, Color color: Color) {
         var h: CGFloat = 0
         var s: CGFloat = 0
         var v: CGFloat = 0
@@ -58,11 +63,11 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func SetMode(IP ip: String, Mode mode: String) {
+    func SetDeviceMode(IP ip: String, Mode mode: String) {
         devices[ip]?.SetMode(Mode: mode)
     }
     
-    func SetBrightness(IP ip: String, Brightness brightness: Double) {
+    func SetDeviceBrightness(IP ip: String, Brightness brightness: Double) {
         // expect a value between 1 and 100
         var scalar = Float(brightness) / 100.0
         if (scalar > 1.0) { scalar = 1.0 }
@@ -70,20 +75,7 @@ class HomeViewModel: ObservableObject {
         devices[ip]?.SetBrightness(Brightness: UInt8(Float(UInt8.max) * scalar))
     }
     
-    func SetActive(IP ip: String, Active active: Bool) {
+    func SetDeviceActive(IP ip: String, Active active: Bool) {
         devices[ip]?.SetActive(Active: active)
     }
-    
-    // TODO: Support device discovery
-    
-    //var DNSService: UnsafeMutablePointer<DNSServiceRef?>!
-    
-    //func HandleServiceDiscovered(_ reply: DNSServiceBrowseReply?) {
-        
-    //}
-    
-    //func DiscoverDevices() {
-        // DNSServiceBrowse(DNSService, DNSServiceFlags(), 0, "_ambience._tcp", nil, HandleServiceDiscovered, nil)
-    //}
-    
 }
